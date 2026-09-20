@@ -1,0 +1,181 @@
+/* ============================================
+   Navbar.css - Stitch "Warm Indulgence" Navbar
+   ============================================ */
+
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: var(--z-nav);
+  padding: var(--space-md) 0;
+  transition: all var(--transition-base);
+  background: transparent;
+}
+
+.navbar--scrolled,
+.navbar--solid {
+  background: rgba(59, 26, 18, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 24px rgba(32, 6, 2, 0.25);
+  border-bottom: 1px solid rgba(217, 168, 108, 0.15);
+  padding: var(--space-sm) 0;
+}
+
+.navbar__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+/* Logo */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.navbar__logo-img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-gold);
+  box-shadow: 0 2px 10px rgba(217, 168, 108, 0.3);
+}
+
+.navbar__logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.navbar__logo-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}
+
+.navbar__logo-sub {
+  font-size: 0.65rem;
+  color: rgba(255, 243, 230, 0.6);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Nav Links */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.navbar__link {
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: var(--text-label-md);
+  font-weight: 600;
+  color: rgba(255, 243, 230, 0.8);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.navbar__link:hover {
+  color: var(--color-gold);
+  background: rgba(217, 168, 108, 0.08);
+}
+
+.navbar__link--active {
+  color: var(--color-gold) !important;
+  background: rgba(217, 168, 108, 0.12) !important;
+}
+
+/* Order Button */
+.navbar__order-btn {
+  background: var(--color-gold);
+  color: var(--color-primary-container);
+  font-family: var(--font-body);
+  font-size: var(--text-label-md);
+  font-weight: 700;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(217, 168, 108, 0.35);
+}
+
+.navbar__order-btn:hover {
+  background: var(--color-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(217, 168, 108, 0.5);
+}
+
+/* Hamburger */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--space-sm);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.navbar__hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-gold);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+.navbar__hamburger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar__hamburger--open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.navbar__hamburger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile */
+@media (max-width: 900px) {
+  .navbar__hamburger { display: flex; }
+
+  .navbar__links {
+    position: fixed;
+    top: 0; right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: rgba(59, 26, 18, 0.99);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5rem var(--space-xl) var(--space-xl);
+    gap: var(--space-sm);
+    transition: right var(--transition-base);
+    border-left: 1px solid rgba(217, 168, 108, 0.15);
+    flex-wrap: nowrap;
+  }
+
+  .navbar__links--open { right: 0; }
+  .navbar__link { font-size: var(--text-body-md); padding: var(--space-sm) var(--space-md); width: 100%; text-align: left; }
+  .navbar__order-btn { margin-top: var(--space-md); width: 100%; }
+}

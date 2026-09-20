@@ -1,0 +1,118 @@
+/* Menu Page Shared CSS - Used by Cakes, Fast Food, Desserts pages */
+
+.menu-page { min-height: 100vh; background: var(--color-surface); }
+
+/* Hero */
+.menu-page__hero {
+  background: linear-gradient(135deg, var(--color-dark-canvas), var(--color-dark-canvas-mid));
+  padding: 8rem var(--space-xl) 4rem;
+  text-align: center;
+}
+
+.menu-page__eyebrow {
+  display: inline-block; font-size: var(--text-label-lg); font-weight: 600;
+  color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.12em;
+  margin-bottom: var(--space-sm);
+}
+
+.menu-page__title {
+  font-family: var(--font-display); font-size: var(--text-display-lg);
+  font-weight: 800; color: var(--color-on-dark); margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+}
+
+.menu-page__desc { font-size: var(--text-body-lg); color: var(--color-on-dark-muted); }
+
+/* Body */
+.menu-page__body { padding: var(--space-3xl) 0; }
+
+.menu-page__container { max-width: 1280px; margin: 0 auto; padding: 0 var(--space-xl); }
+
+/* Filters */
+.menu-page__filters {
+  display: flex; gap: var(--space-sm); margin-bottom: var(--space-2xl);
+  flex-wrap: wrap; justify-content: center;
+  background: var(--color-surface-container-low);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-full); padding: var(--space-xs);
+  width: fit-content; margin-left: auto; margin-right: auto;
+}
+
+.menu-page__filter {
+  background: none; border: none; cursor: pointer;
+  font-family: var(--font-body); font-size: var(--text-label-lg); font-weight: 600;
+  color: var(--color-on-surface-variant);
+  padding: var(--space-sm) var(--space-lg); border-radius: var(--radius-full);
+  transition: all var(--transition-base); white-space: nowrap;
+}
+.menu-page__filter:hover { color: var(--color-secondary); }
+.menu-page__filter--active {
+  background: var(--color-primary-container);
+  color: var(--color-gold); box-shadow: 0 4px 12px rgba(59, 26, 18, 0.15);
+}
+
+/* Grid */
+.menu-page__grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg);
+}
+
+/* Card */
+.menu-page__card {
+  background: var(--color-surface-container-lowest);
+  border: 1px solid rgba(217, 168, 108, 0.15);
+  border-radius: var(--radius-xl); overflow: hidden;
+  transition: all var(--transition-spring); box-shadow: var(--shadow-card);
+  position: relative; display: flex; flex-direction: column;
+}
+.menu-page__card:hover { transform: translateY(-8px); box-shadow: var(--shadow-elevated); border-color: rgba(217, 168, 108, 0.4); }
+
+.menu-page__tag {
+  position: absolute; top: var(--space-sm); left: var(--space-sm);
+  color: white; font-size: 10px; font-weight: 800;
+  padding: 3px 10px; border-radius: var(--radius-full);
+  text-transform: uppercase; letter-spacing: 0.05em; z-index: 1;
+}
+
+.menu-page__img-container {
+  height: 180px; overflow: hidden; background: var(--color-surface-container-low);
+  position: relative; border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.menu-page__card-img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform var(--transition-spring);
+}
+
+.menu-page__card:hover .menu-page__card-img { transform: scale(1.08); }
+
+.menu-page__info { padding: var(--space-md); flex: 1; display: flex; flex-direction: column; }
+
+.menu-page__name {
+  font-family: var(--font-display); font-size: var(--text-headline-sm); font-weight: 700;
+  color: var(--color-on-surface); margin-bottom: var(--space-xs);
+}
+
+.menu-page__item-desc {
+  font-size: var(--text-body-sm); color: var(--color-on-surface-variant);
+  line-height: 1.5; margin-bottom: var(--space-md); flex: 1;
+}
+
+.menu-page__footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+
+.menu-page__price {
+  font-family: var(--font-body); font-size: var(--text-price); font-weight: 800;
+  color: var(--color-gold-dark);
+}
+
+.menu-page__add {
+  background: var(--color-gold); color: var(--color-primary-container);
+  border: none; border-radius: var(--radius-full);
+  font-size: var(--text-label-lg); font-weight: 700; cursor: pointer;
+  padding: var(--space-xs) var(--space-md);
+  transition: all var(--transition-spring);
+}
+.menu-page__add:hover { background: var(--color-gold-light); transform: scale(1.05); }
+
+@media (max-width: 1024px) { .menu-page__grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px) { .menu-page__grid { grid-template-columns: repeat(2, 1fr); } .menu-page__title { font-size: 2.5rem; } }
+@media (max-width: 480px) { .menu-page__grid { grid-template-columns: 1fr; } }

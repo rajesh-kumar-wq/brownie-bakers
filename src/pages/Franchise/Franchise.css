@@ -1,0 +1,38 @@
+/* Franchise Page CSS */
+.franchise-page { min-height: 100vh; background: var(--color-surface); }
+.franchise-page__hero { background: linear-gradient(135deg, var(--color-primary-container), var(--color-dark-canvas-mid), #3b1a12); padding: 8rem var(--space-xl) 4rem; text-align: center; }
+.franchise-page__eyebrow { display: inline-block; font-size: var(--text-label-lg); font-weight: 600; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: var(--space-sm); }
+.franchise-page__title { font-family: var(--font-display); font-size: var(--text-display-lg); font-weight: 800; color: var(--color-on-dark); margin-bottom: var(--space-md); }
+.franchise-page__desc { font-size: var(--text-body-lg); color: var(--color-on-dark-muted); margin-bottom: var(--space-xl); }
+.franchise-page__hero-stats { display: flex; gap: var(--space-2xl); justify-content: center; flex-wrap: wrap; }
+.franchise-page__hero-stats div { display: flex; flex-direction: column; gap: var(--space-xs); align-items: center; }
+.franchise-page__stat-val { font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--color-gold); }
+.franchise-page__hero-stats span:last-child { font-size: var(--text-label-md); color: rgba(255,243,230,0.7); }
+.franchise-page__container { max-width: 1280px; margin: 0 auto; padding: var(--space-3xl) var(--space-xl); display: flex; flex-direction: column; gap: var(--space-3xl); }
+.franchise-page__section-title { font-family: var(--font-display); font-size: var(--text-headline-md); font-weight: 700; color: var(--color-on-surface); margin-bottom: var(--space-xl); text-align: center; }
+.franchise-page__benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); }
+.franchise-page__benefit-card { background: var(--color-surface-container-lowest); border: 1px solid var(--color-outline-variant); border-radius: var(--radius-xl); padding: var(--space-xl); text-align: center; transition: all var(--transition-spring); box-shadow: var(--shadow-card); }
+.franchise-page__benefit-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-elevated); border-color: rgba(217, 168, 108, 0.4); }
+.franchise-page__benefit-icon {
+  width: 56px; height: 56px; background: rgba(217, 168, 108, 0.15);
+  color: var(--color-gold-dark); border-radius: var(--radius-full);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto var(--space-md);
+}
+.franchise-page__benefit-card h3 { font-family: var(--font-display); font-size: var(--text-headline-sm); font-weight: 700; color: var(--color-on-surface); margin-bottom: var(--space-xs); }
+.franchise-page__benefit-card p { font-size: var(--text-body-sm); color: var(--color-on-surface-variant); }
+.franchise-page__faq-item { border: 1px solid var(--color-outline-variant); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: var(--space-sm); }
+.franchise-page__faq-q { width: 100%; background: var(--color-surface-container-lowest); border: none; font-family: var(--font-body); font-size: var(--text-body-md); font-weight: 600; color: var(--color-on-surface); padding: var(--space-md) var(--space-lg); cursor: pointer; display: flex; justify-content: space-between; align-items: center; text-align: left; transition: background var(--transition-base); }
+.franchise-page__faq-q:hover { background: var(--color-surface-container-low); }
+.franchise-page__faq-a { background: var(--color-surface-container-low); padding: var(--space-md) var(--space-lg); font-size: var(--text-body-md); color: var(--color-on-surface-variant); line-height: 1.7; }
+.franchise-page__form { background: var(--color-surface-container-lowest); border: 1px solid rgba(217, 168, 108, 0.2); border-radius: var(--radius-xl); padding: var(--space-2xl); display: flex; flex-direction: column; gap: var(--space-md); max-width: 800px; margin: 0 auto; }
+.franchise-page__success { background: rgba(76, 175, 80, 0.1); border: 1px solid rgba(76, 175, 80, 0.3); color: #4caf50; padding: var(--space-md); border-radius: var(--radius-lg); font-weight: 600; text-align: center; }
+.franchise-page__form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+.franchise-page__field { display: flex; flex-direction: column; gap: var(--space-xs); }
+.franchise-page__field label { font-size: var(--text-label-lg); font-weight: 600; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+.franchise-page__field input, .franchise-page__field select { background: var(--color-surface-container-low); border: 1.5px solid var(--color-outline-variant); border-radius: var(--radius-md); padding: var(--space-sm) var(--space-md); font-family: var(--font-body); font-size: var(--text-body-md); color: var(--color-on-surface); outline: none; transition: border-color var(--transition-base); }
+.franchise-page__field input:focus, .franchise-page__field select:focus { border-color: var(--color-gold); box-shadow: 0 0 0 3px rgba(217, 168, 108, 0.2); }
+.franchise-page__submit { background: var(--color-gold); color: var(--color-primary-container); font-family: var(--font-body); font-size: var(--text-label-lg); font-weight: 700; padding: var(--space-md) var(--space-xl); border-radius: var(--radius-full); border: none; cursor: pointer; transition: all var(--transition-spring); box-shadow: 0 4px 20px rgba(217, 168, 108, 0.3); }
+.franchise-page__submit:hover { background: var(--color-gold-light); transform: translateY(-2px); }
+@media (max-width: 1024px) { .franchise-page__benefits-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .franchise-page__benefits-grid { grid-template-columns: 1fr; } .franchise-page__form-row { grid-template-columns: 1fr; } .franchise-page__title { font-size: 2.5rem; } }
