@@ -23,5 +23,16 @@
 .branches-page__review-avatar { width: 44px; height: 44px; background: var(--color-surface-container); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
 .branches-page__review-name { font-weight: 700; color: var(--color-on-surface); font-size: var(--text-body-md); }
 .branches-page__review-branch { font-size: var(--text-body-sm); color: var(--color-secondary); }
-@media (max-width: 1024px) { .branches-page__branches-grid { grid-template-columns: repeat(2, 1fr); } .branches-page__reviews-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 768px) { .branches-page__branches-grid { grid-template-columns: 1fr; } .branches-page__reviews-grid { grid-template-columns: 1fr; } .branches-page__title { font-size: 2.5rem; } }
+@media (max-width: 1024px) { 
+  .branches-page__branches-grid { grid-template-columns: repeat(2, 1fr); } 
+  .branches-page__reviews-grid { grid-template-columns: repeat(2, 1fr); } 
+}
+
+@media (max-width: 768px) { 
+  .branches-page__hero { padding: 5.5rem var(--space-md) 2.5rem; }
+  .branches-page__container { padding: var(--space-xl) var(--space-md); gap: var(--space-2xl); }
+  .branches-page__branches-grid { grid-template-columns: 1fr; gap: var(--space-md); } 
+  .branches-page__reviews-grid { grid-template-columns: 1fr; gap: var(--space-md); } 
+  .branches-page__title { font-size: clamp(2rem, 7vw, 2.6rem); }
+  .branches-page__branch-card { padding: var(--space-md); }
+}

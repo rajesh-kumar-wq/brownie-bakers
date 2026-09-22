@@ -155,27 +155,78 @@
 .navbar__hamburger--open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .navbar__hamburger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* Mobile Backdrop Overlay */
+.navbar__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 5, 2, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: calc(var(--z-nav) - 1);
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* Mobile */
 @media (max-width: 900px) {
-  .navbar__hamburger { display: flex; }
+  .navbar__container {
+    padding: 0 var(--space-md);
+  }
+
+  .navbar__logo-name {
+    font-size: 1.05rem;
+  }
+
+  .navbar__logo-sub {
+    font-size: 0.58rem;
+  }
+
+  .navbar__hamburger { 
+    display: flex; 
+    z-index: calc(var(--z-nav) + 1);
+  }
 
   .navbar__links {
     position: fixed;
     top: 0; right: -100%;
-    width: 300px;
+    width: 280px;
+    max-width: 85vw;
     height: 100vh;
-    background: rgba(59, 26, 18, 0.99);
-    backdrop-filter: blur(20px);
+    background: rgba(45, 18, 12, 0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     flex-direction: column;
     align-items: flex-start;
-    padding: 5rem var(--space-xl) var(--space-xl);
-    gap: var(--space-sm);
-    transition: right var(--transition-base);
-    border-left: 1px solid rgba(217, 168, 108, 0.15);
+    padding: 5rem var(--space-lg) var(--space-xl);
+    gap: var(--space-xs);
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    border-left: 1px solid rgba(217, 168, 108, 0.2);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
     flex-wrap: nowrap;
+    overflow-y: auto;
   }
 
   .navbar__links--open { right: 0; }
-  .navbar__link { font-size: var(--text-body-md); padding: var(--space-sm) var(--space-md); width: 100%; text-align: left; }
-  .navbar__order-btn { margin-top: var(--space-md); width: 100%; }
+  
+  .navbar__links li {
+    width: 100%;
+  }
+
+  .navbar__link { 
+    font-size: var(--text-body-md); 
+    padding: var(--space-sm) var(--space-md); 
+    width: 100%; 
+    text-align: left; 
+    border-radius: var(--radius-md);
+  }
+  
+  .navbar__order-btn { 
+    margin-top: var(--space-md); 
+    width: 100%; 
+    text-align: center;
+    padding: var(--space-md);
+  }
 }

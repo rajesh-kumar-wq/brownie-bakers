@@ -5,7 +5,7 @@
 /* Hero */
 .menu-page__hero {
   background: linear-gradient(135deg, var(--color-dark-canvas), var(--color-dark-canvas-mid));
-  padding: 8rem var(--space-xl) 4rem;
+  padding: 7.5rem var(--space-xl) 3.5rem;
   text-align: center;
 }
 
@@ -21,16 +21,16 @@
   letter-spacing: -0.02em;
 }
 
-.menu-page__desc { font-size: var(--text-body-lg); color: var(--color-on-dark-muted); }
+.menu-page__desc { font-size: var(--text-body-lg); color: var(--color-on-dark-muted); max-width: 600px; margin: 0 auto; }
 
 /* Body */
-.menu-page__body { padding: var(--space-3xl) 0; }
+.menu-page__body { padding: var(--space-2xl) 0 var(--space-3xl); }
 
 .menu-page__container { max-width: 1280px; margin: 0 auto; padding: 0 var(--space-xl); }
 
 /* Filters */
 .menu-page__filters {
-  display: flex; gap: var(--space-sm); margin-bottom: var(--space-2xl);
+  display: flex; gap: var(--space-xs); margin-bottom: var(--space-2xl);
   flex-wrap: wrap; justify-content: center;
   background: var(--color-surface-container-low);
   border: 1px solid var(--color-outline-variant);
@@ -73,13 +73,17 @@
   text-transform: uppercase; letter-spacing: 0.05em; z-index: 1;
 }
 
-.menu-page__emoji {
-  background: var(--color-surface-container-low);
-  padding: var(--space-xl); text-align: center; font-size: 3.5rem;
-  border-bottom: 1px solid var(--color-outline-variant);
+.menu-page__img-container {
+  height: 180px; overflow: hidden; background: var(--color-surface-container-low);
+  position: relative; border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.menu-page__card-img {
+  width: 100%; height: 100%; object-fit: cover;
   transition: transform var(--transition-spring);
 }
-.menu-page__card:hover .menu-page__emoji { transform: scale(1.1); }
+
+.menu-page__card:hover .menu-page__card-img { transform: scale(1.08); }
 
 .menu-page__info { padding: var(--space-md); flex: 1; display: flex; flex-direction: column; }
 
@@ -93,22 +97,56 @@
   line-height: 1.5; margin-bottom: var(--space-md); flex: 1;
 }
 
-.menu-page__footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+.menu-page__footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; }
 
 .menu-page__price {
-  font-family: var(--font-body); font-size: var(--text-price); font-weight: 800;
-  color: var(--color-gold-dark);
+  font-family: var(--font-body); font-size: 0.95rem; font-weight: 800;
+  color: var(--color-gold-dark); word-break: break-word;
 }
 
 .menu-page__add {
   background: var(--color-gold); color: var(--color-primary-container);
   border: none; border-radius: var(--radius-full);
-  font-size: var(--text-label-lg); font-weight: 700; cursor: pointer;
+  font-size: var(--text-label-md); font-weight: 700; cursor: pointer;
   padding: var(--space-xs) var(--space-md);
-  transition: all var(--transition-spring);
+  transition: all var(--transition-spring); white-space: nowrap; flex-shrink: 0;
 }
 .menu-page__add:hover { background: var(--color-gold-light); transform: scale(1.05); }
 
-@media (max-width: 1024px) { .menu-page__grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 768px) { .menu-page__grid { grid-template-columns: repeat(2, 1fr); } .menu-page__title { font-size: 2.5rem; } }
-@media (max-width: 480px) { .menu-page__grid { grid-template-columns: 1fr; } }
+/* Responsive Media Queries */
+@media (max-width: 1024px) { 
+  .menu-page__grid { grid-template-columns: repeat(3, 1fr); } 
+}
+
+@media (max-width: 768px) { 
+  .menu-page__hero { padding: 5.5rem var(--space-md) 2.5rem; }
+  .menu-page__title { font-size: clamp(2rem, 7vw, 2.6rem); }
+  .menu-page__container { padding: 0 var(--space-md); }
+  
+  .menu-page__filters {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: var(--radius-lg);
+    padding: 6px;
+    margin-bottom: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .menu-page__filters::-webkit-scrollbar { display: none; }
+  
+  .menu-page__filter {
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--text-body-sm);
+  }
+
+  .menu-page__grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); } 
+}
+
+@media (max-width: 480px) { 
+  .menu-page__grid { grid-template-columns: 1fr; gap: var(--space-md); } 
+  .menu-page__img-container { height: 160px; }
+}
+

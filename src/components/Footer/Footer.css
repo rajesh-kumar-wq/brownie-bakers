@@ -97,5 +97,15 @@
 .footer__bottom-links span:hover { color: var(--color-gold); }
 
 /* Responsive */
-@media (max-width: 1024px) { .footer__top { grid-template-columns: 1fr 1fr; gap: var(--space-xl); } }
-@media (max-width: 768px) { .footer__top { grid-template-columns: 1fr; gap: var(--space-lg); } .footer__tagline { max-width: 100%; } .footer__bottom { flex-direction: column; text-align: center; } }
+@media (max-width: 1024px) { 
+  .footer__top { grid-template-columns: 1fr 1fr; gap: var(--space-xl); } 
+}
+
+@media (max-width: 768px) { 
+  .footer__container { padding: 0 var(--space-md); }
+  .footer__top { grid-template-columns: 1fr; gap: var(--space-xl); padding: var(--space-2xl) 0 var(--space-xl); } 
+  .footer__tagline { max-width: 100%; } 
+  .footer__bottom { flex-direction: column; text-align: center; gap: var(--space-sm); }
+  .footer__order-btn { width: 100%; justify-content: center; }
+  .footer__bottom-links { justify-content: center; }
+}
